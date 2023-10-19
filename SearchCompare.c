@@ -63,7 +63,7 @@ int main(void)
 
     /* Prints the result */
     int result = LinSearch(array, x);
-    if (result == 0)
+    if (result == -1)
     {
         printf("LinSearch: %d is not in the list \n", x);
     }
@@ -73,7 +73,7 @@ int main(void)
     }
 
     result = BinSearch(array, x);
-    if (result == 0)
+    if (result == -1)
     {
         printf("BinSearch: %d is not in the list \n", x);
     }
@@ -87,15 +87,22 @@ int main(void)
 
 int LinSearch(int array[], int x)
 {
-    int i = 0;
+    int i = 1;
     /* Fill in your code HERE! */
-    for (i = 0; i < N; i++)
+    while (i <= N && x != array[i])
     {
-        if (array[i] == x)
-            return i;
+        i++;
     }
 
-    return i;
+    if (i <= N)
+    {
+        return i;
+    }
+
+    else
+    {
+        return 0;
+    }
 }
 
 int BinSearch(int array[], int x)
