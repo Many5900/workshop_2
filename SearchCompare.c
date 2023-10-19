@@ -87,21 +87,21 @@ int main(void)
 
 int LinSearch(int array[], int x)
 {
-    int i = 1;
+    int i = 0;
     /* Fill in your code HERE! */
-    while (i <= N && x != array[i])
+    while (i < N && x != array[i])
     {
         i++;
     }
 
-    if (i <= N)
+    if (i < N)
     {
         return i;
     }
 
     else
     {
-        return 0;
+        return -1;
     }
 }
 
